@@ -197,14 +197,14 @@ function setupResource({ key, endpoint, fields, renderItem, formTitleNew, formTi
 const apkResource = setupResource({
   key: 'apk',
   endpoint: 'apk',
-  fields: ['name', 'description', 'downloadUrl', 'order'],
+  fields: ['name', 'url', 'order'],
   formTitleNew: 'Yangi APK qo‘shish',
   formTitleEdit: 'APK-ni tahrirlash',
   renderItem: (item) => `
     <div class="admin-item">
       <div class="admin-item__info">
         <span class="admin-item__title">📱 ${escapeHtml(item.name)}</span>
-        <span class="admin-item__meta">${escapeHtml(item.downloadUrl)}</span>
+        <span class="admin-item__meta">${escapeHtml(item.url)}</span>
       </div>
       <div class="admin-item__actions">
         <button class="btn-edit" data-edit="${item._id}" type="button">Tahrirlash</button>
