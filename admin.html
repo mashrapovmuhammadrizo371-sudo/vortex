@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>VORTEX — Admin Panel</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- ===================== LOGIN ===================== -->
+  <section id="admin-login" class="admin-screen admin-screen--active">
+    <form id="login-form" class="login-card">
+      <h1 class="login-card__brand">VORTEX <span>ADMIN</span></h1>
+      <p class="login-card__hint">Boshqaruv paneliga kirish</p>
+
+      <label class="field">
+        <span>Login</span>
+        <input type="text" id="login-username" autocomplete="username" required>
+      </label>
+
+      <label class="field">
+        <span>Parol</span>
+        <input type="password" id="login-password" autocomplete="current-password" required>
+      </label>
+
+      <p id="login-error" class="form-error" hidden></p>
+
+      <button type="submit" class="btn-primary">Kirish</button>
+    </form>
+  </section>
+
+  <!-- ===================== DASHBOARD ===================== -->
+  <section id="admin-dashboard" class="admin-screen">
+    <header class="admin-topbar">
+      <span class="admin-topbar__brand">VORTEX <span>ADMIN</span></span>
+      <button id="btn-logout" class="btn-ghost" type="button">Chiqish</button>
+    </header>
+
+    <nav class="admin-tabs">
+      <button class="admin-tab admin-tab--active" data-tab="tab-apk">📱 APK</button>
+      <button class="admin-tab" data-tab="tab-promo">🎁 PROMO</button>
+      <button class="admin-tab" data-tab="tab-kupon">🎟️ KUPON</button>
+      <button class="admin-tab" data-tab="tab-tarmoqlar">🌐 TARMOQLAR</button>
+      <button class="admin-tab" data-tab="tab-support">💬 SUPPORT</button>
+    </nav>
+
+    <main class="admin-content">
+
+      <!-- ---------- APK TAB ---------- -->
+      <section id="tab-apk" class="admin-panel admin-panel--active">
+        <div class="admin-panel__list" id="apk-admin-list"></div>
+
+        <form id="apk-form" class="admin-form">
+          <h3 id="apk-form-title">Yangi APK qo‘shish</h3>
+          <input type="hidden" id="apk-id">
+          <label class="field"><span>APK nomi</span><input type="text" id="apk-name" required></label>
+          <label class="field"><span>Ma'lumot</span><textarea id="apk-description" rows="3"></textarea></label>
+          <label class="field"><span>Yuklab olish havolasi</span><input type="text" id="apk-downloadUrl" required></label>
+          <label class="field"><span>Tartib raqami (ixtiyoriy)</span><input type="number" id="apk-order" value="0"></label>
+          <div class="admin-form__actions">
+            <button type="submit" class="btn-primary">Saqlash</button>
+            <button type="button" id="apk-cancel" class="btn-ghost" hidden>Bekor qilish</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- ---------- PROMO TAB ---------- -->
+      <section id="tab-promo" class="admin-panel">
+        <div class="admin-panel__list" id="promo-admin-list"></div>
+
+        <form id="promo-form" class="admin-form">
+          <h3 id="promo-form-title">Yangi PROMO qo‘shish</h3>
+          <input type="hidden" id="promo-id">
+          <label class="field"><span>APK nomi</span><input type="text" id="promo-apkName" required></label>
+          <label class="field"><span>Promokod</span><input type="text" id="promo-promoCode" required></label>
+          <label class="field"><span>Tartib raqami (ixtiyoriy)</span><input type="number" id="promo-order" value="0"></label>
+          <div class="admin-form__actions">
+            <button type="submit" class="btn-primary">Saqlash</button>
+            <button type="button" id="promo-cancel" class="btn-ghost" hidden>Bekor qilish</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- ---------- KUPON TAB ---------- -->
+      <section id="tab-kupon" class="admin-panel">
+        <div class="admin-panel__list" id="kupon-admin-list"></div>
+
+        <form id="kupon-form" class="admin-form">
+          <h3 id="kupon-form-title">Yangi KUPON qo‘shish</h3>
+          <input type="hidden" id="kupon-id">
+          <label class="field"><span>Kupon nomi</span><input type="text" id="kupon-name" required></label>
+          <label class="field"><span>Kod</span><input type="text" id="kupon-code" required></label>
+          <label class="field"><span>Start vaqti</span><input type="text" id="kupon-startTime" placeholder="00:00" required></label>
+          <label class="field"><span>Tartib raqami (ixtiyoriy)</span><input type="number" id="kupon-order" value="0"></label>
+          <div class="admin-form__actions">
+            <button type="submit" class="btn-primary">Saqlash</button>
+            <button type="button" id="kupon-cancel" class="btn-ghost" hidden>Bekor qilish</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- ---------- TARMOQLAR TAB ---------- -->
+      <section id="tab-tarmoqlar" class="admin-panel">
+        <form id="tarmoqlar-form" class="admin-form">
+          <h3>Ijtimoiy tarmoq havolalari</h3>
+          <label class="field"><span>✈️ Telegram</span><input type="text" id="settings-telegram" placeholder="https://t.me/..."></label>
+          <label class="field"><span>📸 Instagram</span><input type="text" id="settings-instagram" placeholder="https://instagram.com/..."></label>
+          <label class="field"><span>▶️ YouTube</span><input type="text" id="settings-youtube" placeholder="https://youtube.com/..."></label>
+          <div class="admin-form__actions">
+            <button type="submit" class="btn-primary">Saqlash</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- ---------- SUPPORT TAB ---------- -->
+      <section id="tab-support" class="admin-panel">
+        <form id="support-form" class="admin-form">
+          <h3>Support havolasi</h3>
+          <label class="field"><span>💬 Support link (Telegram va h.k.)</span><input type="text" id="settings-support" placeholder="https://t.me/..."></label>
+          <div class="admin-form__actions">
+            <button type="submit" class="btn-primary">Saqlash</button>
+          </div>
+        </form>
+      </section>
+
+    </main>
+
+    <p id="admin-toast" class="admin-toast" hidden></p>
+  </section>
+
+  <script src="admin.js"></script>
+</body>
+              </html>
+              
