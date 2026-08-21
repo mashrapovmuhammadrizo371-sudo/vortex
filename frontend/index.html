@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>VORTEX</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== WELCOME SCREEN ===================== -->
+  <section id="screen-welcome" class="screen screen--active">
+    <div class="welcome">
+      <div class="vortex-ring" aria-hidden="true"></div>
+      <h1 class="vortex-logo">VORTEX</h1>
+      <p class="welcome-title">Welcome to VORTEX</p>
+      <p class="welcome-subtitle">Your world. Your choice.</p>
+      <button id="btn-kirish" class="btn-enter" type="button">
+        <span>KIRISH</span>
+        <svg class="btn-enter__arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===================== MAIN SCREEN ===================== -->
+  <section id="screen-main" class="screen">
+    <header class="topbar">
+      <span class="topbar__brand">VORTEX</span>
+    </header>
+
+    <div class="main-grid">
+      <button class="tile" data-target="screen-apk">
+        <span class="tile__icon">📱</span>
+        <span class="tile__label">APK</span>
+      </button>
+      <button class="tile" data-target="screen-tarmoqlar">
+        <span class="tile__icon">🌐</span>
+        <span class="tile__label">TARMOQLAR</span>
+      </button>
+      <button class="tile" data-target="screen-promo">
+        <span class="tile__icon">🎁</span>
+        <span class="tile__label">PROMO</span>
+      </button>
+      <button class="tile" data-target="screen-kupon">
+        <span class="tile__icon">🎟️</span>
+        <span class="tile__label">KUPON</span>
+      </button>
+    </div>
+
+    <button id="btn-support" class="tile tile--support" type="button">
+      <span class="tile__icon">💬</span>
+      <span class="tile__label">SUPPORT</span>
+    </button>
+  </section>
+
+  <!-- ===================== APK SCREEN ===================== -->
+  <section id="screen-apk" class="screen screen--sub">
+    <header class="subbar">
+      <button class="btn-back" data-back type="button" aria-label="Orqaga">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 12H5M5 12L11 6M5 12L11 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <h2 class="subbar__title">📱 APK</h2>
+    </header>
+    <div id="apk-list" class="list"></div>
+    <p id="apk-empty" class="empty-state" hidden>Hozircha APK mavjud emas.</p>
+  </section>
+
+  <!-- ===================== TARMOQLAR SCREEN ===================== -->
+  <section id="screen-tarmoqlar" class="screen screen--sub">
+    <header class="subbar">
+      <button class="btn-back" data-back type="button" aria-label="Orqaga">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 12H5M5 12L11 6M5 12L11 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <h2 class="subbar__title">🌐 TARMOQLAR</h2>
+    </header>
+    <div class="list">
+      <a id="link-telegram" class="social-row" href="#" target="_blank" rel="noopener">
+        <span class="social-row__icon">✈️</span>
+        <span class="social-row__label">Telegram</span>
+      </a>
+      <a id="link-instagram" class="social-row" href="#" target="_blank" rel="noopener">
+        <span class="social-row__icon">📸</span>
+        <span class="social-row__label">Instagram</span>
+      </a>
+      <a id="link-youtube" class="social-row" href="#" target="_blank" rel="noopener">
+        <span class="social-row__icon">▶️</span>
+        <span class="social-row__label">YouTube</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== PROMO SCREEN ===================== -->
+  <section id="screen-promo" class="screen screen--sub">
+    <header class="subbar">
+      <button class="btn-back" data-back type="button" aria-label="Orqaga">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 12H5M5 12L11 6M5 12L11 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <h2 class="subbar__title">🎁 PROMO</h2>
+    </header>
+    <div id="promo-list" class="list"></div>
+    <p id="promo-empty" class="empty-state" hidden>Hozircha promo mavjud emas.</p>
+  </section>
+
+  <!-- ===================== KUPON SCREEN ===================== -->
+  <section id="screen-kupon" class="screen screen--sub">
+    <header class="subbar">
+      <button class="btn-back" data-back type="button" aria-label="Orqaga">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 12H5M5 12L11 6M5 12L11 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <h2 class="subbar__title">🎟️ KUPON</h2>
+    </header>
+    <div id="kupon-list" class="list"></div>
+    <p id="kupon-empty" class="empty-state" hidden>Hozircha kupon mavjud emas.</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+  </html>
