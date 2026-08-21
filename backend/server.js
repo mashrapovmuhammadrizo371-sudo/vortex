@@ -23,14 +23,14 @@ app.use('/api/kupon', kuponRoutes);
 app.use('/api/settings', settingsRoutes);
 
 // Frontend (welcome + asosiy sahifa) va Admin Panel statik fayllari
-app.use(express.static(path.join(__dirname, '..', 'frontend')));
+app.use(express.static(path.join(__dirname, '..', 'fronted')));
 
 app.get('/admin', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'frontend', 'admin.html'));
+  res.sendFile(path.join(__dirname, '..', 'fronted', 'admin.html'));
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'frontend', 'index.html'));
+  res.sendFile(path.join(__dirname, '..', 'fronted', 'index.html'));
 });
 
 // Umumiy xatolik ushlagich
