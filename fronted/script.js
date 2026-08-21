@@ -67,9 +67,8 @@ async function loadApks() {
       <article class="card">
         <span class="card__eyebrow">📱 APK</span>
         <h3 class="card__title">${escapeHtml(apk.name)}</h3>
-        ${apk.description ? `<p class="card__desc">${escapeHtml(apk.description)}</p>` : ''}
-        <a class="card__cta" href="${escapeHtml(apk.downloadUrl)}" target="_blank" rel="noopener">
-          ⬇️ YUKLAB OLISH
+         <a class="card__cta" href="${escapeHtml(apk.url)}" target="_blank" rel="noopener"> 
+         ⬇️ YUKLAB OLISH
         </a>
       </article>`
       )
